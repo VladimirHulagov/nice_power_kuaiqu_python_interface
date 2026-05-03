@@ -7,6 +7,7 @@
 usbDevWithPath = "/dev/ttyUSB0"
 
 import serial
+import time
 
 ser = serial.Serial(port=usbDevWithPath, baudrate=9600, timeout=1)
 ser.flush()
@@ -83,13 +84,18 @@ def set_current(val):
 # main
 
 
-print(get_voltage())
-print(get_current())
+#print(get_voltage())
+#print(get_current())
+#
+#set_psu_remote()
+#set_output_off()
+#set_voltage(24.0)
+#time.sleep(3)
+#print(get_voltage())
+#set_current(1.0)
+#set_output_on()
+##set_psu_local()
 
-set_psu_remote()
-set_output_off()
-set_voltage(8.0)
-set_current(12.0)
-set_psu_local()
-
-
+while True:
+  print(get_current())
+  time.sleep(1)
